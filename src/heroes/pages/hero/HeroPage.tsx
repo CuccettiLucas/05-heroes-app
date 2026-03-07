@@ -39,8 +39,6 @@ export const HeroPage = () => {
   const { data: hero } = useHero(idSlug);
   const info = hero?.data;
 
-  console.log("HERO", hero);
-
   const totalPower =
     superheroData.strength +
     superheroData.intelligence +
