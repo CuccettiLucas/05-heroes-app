@@ -37,18 +37,18 @@ export const HeroStats = () => {
                 icon={<Zap className="h-4 w-4 text-muted-foreground" />}
             >
                 <div className="text-lg font-bold">
-                    {summary?.strongestHero.alias}
+                    {summary?.strongestHero?.alias}
                 </div>
-                <p className="text-xs text-muted-foreground">Strength: {summary?.smartestHero.strength}</p>
+                <p className="text-xs text-muted-foreground">Strength: {summary?.smartestHero?.strength}</p>
             </HeroStatCard>
             <HeroStatCard
                 title="Smartest"
                 icon={<Trophy className="h-4 w-4 text-muted-foreground" />}
             >
                 <div className="text-lg font-bold">
-                    {summary?.smartestHero.alias}
+                    {summary?.smartestHero?.alias}
                 </div>
-                <p className="text-xs text-muted-foreground">Intelligence: {summary?.smartestHero.intelligence}</p>
+                <p className="text-xs text-muted-foreground">Intelligence: {summary?.smartestHero?.intelligence}</p>
             </HeroStatCard>
         </div>
     );
