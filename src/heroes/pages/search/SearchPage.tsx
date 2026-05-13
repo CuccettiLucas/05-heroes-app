@@ -9,12 +9,13 @@ import { HeroGrid } from "@/heroes/components/HeroGrid";
 export const SearchPage = () => {
 
   const [searchParams] = useSearchParams();
-  const nameHero = searchParams.get("name") ?? "";
-  
-  const { data: result } = useSearchHeros({ name: nameHero });
+  const nameHero = searchParams.get("name") ?? undefined;
+  const strength = searchParams.get("strength") ?? undefined;
+
+  const { data: result } = useSearchHeros({ name: nameHero, strength:strength });
 
   return(
-    <>
+    <div className="max-w-7xl mx-auto p-6">
       <CustomJumboton 
           title="Búsqueda de SuperHéroes"
           description="Descubre, explora y administra super héroes"
@@ -31,7 +32,7 @@ export const SearchPage = () => {
       {/* Controls */}
       <SearchControls />
       <HeroGrid heroes={result ?? []} />
-    </>
+    </div>
   );
 }
 

@@ -13,7 +13,7 @@ interface Options {
 export const useSearchHeros = (options: Options) => {
 
     return useQuery({
-    queryKey: ['search-heros', options.name],
+    queryKey: ['search-heros', options],
     queryFn: () => searchHero(options),
     enabled: options.name != "",
     staleTime: 1000 * 60 * 50, // 5 minutos

@@ -12,10 +12,11 @@ interface Options {
     strength ?:string;
 }
 
-export const searchHero = async ({ name }: Options):Promise<Hero[]> =>{
+export const searchHero = async (options: Options):Promise<Hero[]> =>{
     const { data } = await heroApi.get<Hero[]>(`/search`, {
             params: {
-                name:name,
+                name:options?.name,
+                strength:options?.strength
             }
         });
 
